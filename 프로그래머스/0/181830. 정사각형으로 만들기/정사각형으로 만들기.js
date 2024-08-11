@@ -7,9 +7,9 @@ function solution(arr) {
         }
     }
     if(maxNum !== arr[0].length){
-        const defaultArrLength = arr[0].length
+        const cols = arr[0].length
         for(let i = 0; i < arr.length; i++){
-            for(let j = 0; j < maxNum - defaultArrLength; j++){
+            for(let j = 0; j < maxNum - cols; j++){
                 newArr[i].push(0);
             }
         }
