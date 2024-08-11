@@ -1,3 +1,9 @@
+function solution(str) {
+    return [...str].reduce((p, c) => (p[c.charCodeAt() - (c === c.toLowerCase() ? 71 : 65)]++, p), Array(52).fill(0));
+}
+// toLowerCase로 대소문자 구분
+
+/*
 function solution(my_string) {
     const answer = new Array(52).fill(0);
     const aCode = 'a'.charCodeAt();
@@ -14,3 +20,4 @@ function solution(my_string) {
     }
     return answer;
 }
+*/
