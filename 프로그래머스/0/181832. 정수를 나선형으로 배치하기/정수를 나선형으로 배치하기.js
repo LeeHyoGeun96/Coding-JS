@@ -1,4 +1,26 @@
 function solution(n) {
+    const move = [[0, 1], [1, 0], [0, -1], [-1, 0]];
+    const answer = Array.from(new Array(n), () => new Array(n).fill(0))
+    let x = 0, y = 0, dir = 0, num = 1;
+    while(num <= n * n) {
+        answer[x][y] = num;
+        let nextX = x + move[dir][0];
+        let nextY = y + move[dir][1];
+        if (nextX >= n || nextX < 0 || nextY >= n || nextY < 0 || answer[nextX][nextY] !== 0) {
+            dir = (dir + 1) % 4;
+            nextX = x + move[dir][0];
+            nextY = y + move[dir][1];
+        }
+        x = nextX;
+        y = nextY;
+        num ++;
+
+    }
+    return answer;
+}
+
+/*
+function solution(n) {
     // n x n 크기의 2차원 배열을 0으로 초기화
     const matrix = Array.from({ length: n }, () => Array(n).fill(0));
 
@@ -36,3 +58,4 @@ function solution(n) {
 
     return matrix;
 }
+*/
